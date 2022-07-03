@@ -1,6 +1,7 @@
 package com.cibertec.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,23 @@ public class ServicioServiceImp implements ServicioService {
 	@Override
 	public List<Servicio> listaServicio() {
 		return repository.findAll() ;
+	}
+
+	@Override
+	public Servicio insertaActualizaServicio(Servicio obj) {
+		return repository.save(obj);
+	}
+
+	@Override
+	public void eliminaServicio(int idServicio) {
+		repository.deleteById(idServicio);
+		
+		
+	}
+
+	@Override
+	public Optional<Servicio> buscaServicio(int idServicio) {
+		return repository.findById(idServicio);
 	}
 
 }

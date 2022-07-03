@@ -46,8 +46,8 @@ public class Departamento implements Serializable{
 	@Column(name="numero_departamento")
 	private int numero_departamento;
 	
-	@Column(name="tamañom2_departamento")
-	private int tamañom2_departamento;
+	@Column(name="tamanom2_departamento")
+	private int tamanom2_departamento;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_propietario")
